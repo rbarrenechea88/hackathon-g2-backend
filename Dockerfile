@@ -1,5 +1,5 @@
 # Use uma Imagem Official do Python
-FROM python:3.9-slim
+FROM python:rc-slim
 
 # Definindo o diretório onde a aplicação será armazenada
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Instrução para iniciar a aplicação.
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD ["gunicorn", "app:app"]
