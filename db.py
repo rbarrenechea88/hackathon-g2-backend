@@ -8,6 +8,11 @@ db_name = os.environ.get('CLOUD_SQL_DATABASE_NAME')
 db_local_host = os.environ.get('DB_LOCAL_HOST')
 db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 
+print(db_connection_name)
+print(db_user)
+print(db_password)
+print(db_local_host)
+
 def open_connection():
     try:
         if db_connection_name:
